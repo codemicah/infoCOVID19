@@ -1,5 +1,6 @@
 *{
     list-style: none;
+    font-family: 'Baloo Chettan 2', cursive;
 }
 * a{
     color: #fff;
@@ -8,9 +9,13 @@
     transform: scale(3);
     color: lime;
 }
+h1, h2, h3, h4,h5, h6{
+    font-family: 'Heebo', sans-serif;
+}
 body{
     background: #fff;
     font-size: 1.5em;
+    font-family: 'Baloo Chettan 2', cursive;
 }
 h1{
     font-size: 2em;
@@ -71,5 +76,8 @@ h1{
     }
     #report{
         padding: 20px
+    }
+    .bar{
+        font-size: 1em;
     }
 }
