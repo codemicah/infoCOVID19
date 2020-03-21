@@ -61,7 +61,7 @@ $("input[type=checkbox]").click(function(){
             color: "#fff"
         }
         $(".bar").css(styles)
-        $(percent).text("You're aren't doing so well")
+        $(percent).text("A little sick")
     }
     else if(state == 2){
         styles={

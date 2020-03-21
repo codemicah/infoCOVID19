@@ -23,6 +23,7 @@ h1{
 #progress_bar{
     padding: 10px;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+    background-color: black;
 }
 .bar{
     height: 30px;
