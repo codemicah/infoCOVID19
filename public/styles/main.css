@@ -1,0 +1,75 @@
+*{
+    list-style: none;
+}
+* a{
+    color: #fff;
+}
+#tick{
+    transform: scale(3);
+    color: lime;
+}
+body{
+    background: #fff;
+    font-size: 1.5em;
+}
+h1{
+    font-size: 2em;
+}
+#progress_bar{
+    padding: 10px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+}
+.bar{
+    height: 30px;
+    transition: .5s;
+    background-color:#30e030;
+    color: #f1f1f1;
+    padding: 0 5px;
+    font-weight: 600;
+    font-size: .6em;
+    border-radius: 2mm;
+}
+#checkbox{
+    transform: scale(2);
+    margin: 0 10px;
+     border: none;
+     box-shadow: none;
+     background-color: #fff;;
+}
+.ui .segment{
+    padding: 30px;
+}
+.others{
+    display: flexbox;
+    float: right
+}
+#report{
+        position: fixed;
+        right: 60px;
+        bottom: 60px; 
+        background-color: red;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        margin: auto;
+        padding: 30px;
+}
+.ui.menu:not(.vertical) .item{
+    display: inline-block;
+    float: left
+}
+#menu_btn{
+    display: none;
+}
+@media(max-width: 550px){
+    #menu_btn{display: block}
+    body{
+        font-size: 1em;
+    }
+  #hide{
+        display: none;
+    }
+    #report{
+        padding: 20px
+    }
+}

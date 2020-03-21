@@ -1,0 +1,33 @@
+<%- include("partials/header"); -%>
+    <div class=" ui container" style="margin-top: 80px;">
+        <h1 >Mind if we diagnose you?</h1>
+        <form action="" class="form">
+            <div class="ui raised segments animated fadeIn">
+                <div class="ui segment">
+                    <input type="checkbox" style="color: red;" id="checkbox">
+                    <label for="">Do you have a slightly runny nose?</label>
+                </div>
+                <div class="ui segment">
+                    <input type="checkbox" id="checkbox">
+                    <label for="">Do you have a cough?</label>
+                </div>
+                <div class="ui segment">
+                    <input type="checkbox" id="checkbox" >
+                    <label for="">Do you have a headache?</label>
+                </div>
+                <div class="ui segment">
+                    <input type="checkbox" id="checkbox">
+                    <label for="">Do you have a fever?</label>
+                </div>
+            </div>
+        </form>
+        <div id="progress_bar">
+            <div class="bar">
+                <span class="text centered"> 
+                    You're fine
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer"); -%>
