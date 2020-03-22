@@ -59,7 +59,6 @@ h1{
 }
 .ui.menu:not(.vertical) .item{
     display: inline-block;
-    float: left
 }
 #menu_btn{
     display: none;

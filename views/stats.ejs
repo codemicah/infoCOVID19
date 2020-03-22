@@ -1,0 +1,50 @@
+<%- include("partials/header"); -%>
+
+    <div class="ui container" style="margin-top: 8git 0px">
+        <table class="ui unstackable celled table">
+            <thead>
+                <tr><h2>COUNTRY STATS</h2></tr>
+                <tr>
+                    <td><h2>COUNTRY</h2></td>
+                    <th>TOTAL CASES</th>
+                    <th>NEW CASES</th>
+                    <th>TOTAL DEATHS</th>
+                    <th>NEW DEATHS</th>
+                    <th>TOTAL RECOVERED</th>
+                    <th>ACTIVE CASES</th>
+                </tr>
+            </thead>
+            <tbody >
+                <% for( var i = 0; i < countries.length; i++){%>
+                    <tr>
+                        <td data-label="COUNTRY"><h3><%= countries[i]["country_name"]%></h3></td>
+                        <td  data-label="TOTAL CASES"><%= countries[i]["cases"] %></td>
+                        <td data-label="NEW CASES"><%= countries[i]["new_cases"] %></td>
+                        <td data-label="TOTAL DEATHS"><%= countries[i]["deaths"] %></td>
+                        <td data-label="NEW DEATHS"><%= countries[i]["new_deaths"] %></td>
+                        <td data-label="TOTAL RECOVERED"><%= countries[i]["total_recovered"] %></td>
+                        <td data-label="ACTIVE CASES"><%= countries[i]["active_cases"] %></td>
+                      </tr>
+               <% } %>
+            </tbody>
+          </table>
+    </div>
+    <style>
+        table{
+            font-size: .5em;
+        }
+        body{
+            background-color: black;
+            color: #fff
+        }
+        td, th, tr{
+            background-color: black;
+            color: #fff;
+            border: 0.5px solid #fff
+        }
+        .ui.table thead th{
+            color: #fff;
+            background-color: #1b1c1d;
+        }
+    </style>
+<%- include("partials/footer"); -%>
