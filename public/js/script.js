@@ -94,18 +94,19 @@ $("input[type=checkbox]").click(function(){
 
 $("#menu_btn").click(function(){
     styles = {
-        display: "block",
-        background: "blue",
-        width: "100%",
-        height: "500px",
         float: "none",
+        width: "100%",
+        background: "#1b1c1d",
         position: "fixed",
-        top: "60px",
-        transition: "2s"
+        top: "54.3px",
     }
-    $("#hide").slideToggle(500)
+    $("#hide").css(styles)
     $("#hide a").css("width", "100%")
+    $("#hide a").css("padding-left", "50px")
+    $("#hide").slideToggle(200)
 })
 $("#report").mouseover(function(){
     $(this).addClass("bounce")
 })
+
+// $(".ui .checkbox input[type=checkbox]").css("transform", "scale(5)")

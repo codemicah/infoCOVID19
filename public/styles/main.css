@@ -35,13 +35,10 @@ h1{
     font-size: .6em;
     border-radius: 2mm;
 }
-#checkbox{
-    transform: scale(2);
-    margin: 0 10px;
-     border: none;
-     box-shadow: none;
-     background-color: #fff;;
-}
+/* ..ui.checkbox input[type=checkbox]{
+    transform: scale(5);
+} */
+
 .ui .segment{
     padding: 30px;
 }
