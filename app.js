@@ -40,12 +40,56 @@ app.get("/stats", function(req, res){
         }else{
             newBody = JSON.parse(body)
 
-            var nigeria = newBody.countries_stat[110]
-            var ghana = newBody.countries_stat[116]
-            var benin = newBody.countries_stat[165]
-            var chad = newBody.countries_stat[177]
-            var niger = newBody.countries_stat[173]
-            var gambia = newBody.countries_stat[181]
+            var nigeria = "",
+                    ghana = "",
+                    benin  = "",
+                    chad = "",
+                    niger = "",
+                    gambia = ""
+
+            for(i in newBody.countries_stat){
+                var count = newBody.countries_stat[i]
+                if (count.country_name == "Nigeria"){
+                   nigeria = count
+                   console.log(nigeria)
+                }
+            }
+            for(i in newBody.countries_stat){
+                if (count.country_name == "Ghana"){
+                   ghana = count
+                }
+            }
+            for(i in newBody.countries_stat){
+                var count = newBody.countries_stat[i]
+                if (count.country_name == "Benin"){
+                   benin = count
+                }
+            }
+            for(i in newBody.countries_stat){
+                var count = newBody.countries_stat[i]
+                if (count.country_name == "Chad"){
+                   chad = count
+                }
+            }
+            for(i in newBody.countries_stat){
+                var count = newBody.countries_stat[i]
+                if (count.country_name == "Niger"){
+                   niger = count
+                }
+            }
+            for(i in newBody.countries_stat){
+                var count = newBody.countries_stat[i]
+                if (count.country_name == "Gambia"){
+                   gambia = count
+                }
+            }
+
+            // var nigeria = newBody.countries_stat[110]
+            // var ghana = newBody.countries_stat[116]
+            // var benin = newBody.countries_stat[165]
+            // var chad = newBody.countries_stat[177]
+            // var niger = newBody.countries_stat[173]
+            // var gambia = newBody.countries_stat[181]
             
             const countries = [nigeria, ghana, benin, chad, niger, gambia]
             res.render("stats", {countries: countries})
@@ -54,6 +98,6 @@ app.get("/stats", function(req, res){
 })
 
 
-app.listen(process.env.PORT || 4000, function(){
+app.listen(process.env.PORT || 5000, function(){
     console.log("let's save the world >>>")
 })
