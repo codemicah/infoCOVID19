@@ -40,64 +40,62 @@ app.get("/stats", function(req, res){
         }else{
             newBody = JSON.parse(body)
 
+            //initialise  countries then change later
             var nigeria = "",
                     ghana = "",
                     benin  = "",
                     chad = "",
                     niger = "",
-                    gambia = ""
+                    gambia = "",
+                    burkina_faso = "",
+                    ivory_coast = "",
+                    mauritania = "",
+                    togo = "",
+                    liberia = "",
+                    cabo_verde = "",
+                    senegal = "",
+                    guinea  = ""
 
             for(i in newBody.countries_stat){
                 var count = newBody.countries_stat[i]
                 if (count.country_name == "Nigeria"){
                    nigeria = count
-                   console.log(nigeria)
-                }
-            }
-            for(i in newBody.countries_stat){
-                if (count.country_name == "Ghana"){
-                   ghana = count
-                }
-            }
-            for(i in newBody.countries_stat){
-                var count = newBody.countries_stat[i]
-                if (count.country_name == "Benin"){
-                   benin = count
-                }
-            }
-            for(i in newBody.countries_stat){
-                var count = newBody.countries_stat[i]
-                if (count.country_name == "Chad"){
-                   chad = count
-                }
-            }
-            for(i in newBody.countries_stat){
-                var count = newBody.countries_stat[i]
-                if (count.country_name == "Niger"){
-                   niger = count
-                }
-            }
-            for(i in newBody.countries_stat){
-                var count = newBody.countries_stat[i]
-                if (count.country_name == "Gambia"){
-                   gambia = count
+                }else if(count.country_name == "Ghana"){
+                    ghana = count
+                }else if(count.country_name == "Benin"){
+                    benin = count
+                }else if(count.country_name == "Chad"){
+                    chad = count
+                }else if(count.country_name == "Niger"){
+                    niger = count
+                }else if(count.country_name == "Gambia"){
+                    gambia = count
+                }else if(count.country_name == "Liberia"){
+                    liberia = count
+                }else if(count.country_name == "Togo"){
+                    togo = count
+                }else if(count.country_name == "Senegal"){
+                    senegal = count
+                }else if(count.country_name == "Cabo Verde"){
+                    cabo_verde = count
+                }else if(count.country_name == "Burkina Faso"){
+                    burkina_faso = count
+                }else if(count.country_name == "Ivory Coast"){
+                    ivory_coast = count
+                }else if(count.country_name == "Mauritania"){
+                    mauritania = count
+                }else if(count.country_name == "Guinea"){
+                    guinea = count
                 }
             }
 
-            // var nigeria = newBody.countries_stat[110]
-            // var ghana = newBody.countries_stat[116]
-            // var benin = newBody.countries_stat[165]
-            // var chad = newBody.countries_stat[177]
-            // var niger = newBody.countries_stat[173]
-            // var gambia = newBody.countries_stat[181]
-            
-            const countries = [nigeria, ghana, benin, chad, niger, gambia]
+            const countries = [nigeria, ghana, benin, chad, niger, gambia, guinea, burkina_faso, liberia, senegal, cabo_verde, togo, mauritania,ivory_coast]
             res.render("stats", {countries: countries})
         }
     });
 })
 
 
-app.listen(process.env.PORT || 5000, function(){
+app.listen(process.env.PORT || 4000, function(){
     console.log("let's save the world >>>")
 })
