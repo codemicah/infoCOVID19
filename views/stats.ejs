@@ -1,15 +1,18 @@
 <%- include("partials/header"); -%>
 
-    <div class="ui container" style="margin-top: 8git 0px">
+    <div class="ui container" style="margin-top: 80px">
+            <div class="ui segment inverted">
+                <div class="ui active loader"></div>
+                <p style="text-align: center;" class="ui  text">Realtime syncing</p>
+            </div>
         <table class="ui unstackable celled table">
             <thead>
                 <tr><h2>COUNTRY STATS</h2></tr>
                 <tr>
-                    <td><h2>COUNTRY</h2></td>
+                    <td><strong>COUNTRY</strong></td>
                     <th>TOTAL CASES</th>
                     <th>NEW CASES</th>
                     <th>TOTAL DEATHS</th>
-                    <th>NEW DEATHS</th>
                     <th>TOTAL RECOVERED</th>
                     <th>ACTIVE CASES</th>
                 </tr>
@@ -17,11 +20,10 @@
             <tbody >
                 <% for( var i = 0; i < countries.length; i++){%>
                     <tr>
-                        <td data-label="COUNTRY"><h3><%= countries[i]["country_name"]%></h3></td>
+                        <td data-label="COUNTRY"><strong><%= countries[i]["country_name"]%></strong></td>
                         <td  data-label="TOTAL CASES"><%= countries[i]["cases"] %></td>
                         <td data-label="NEW CASES"><%= countries[i]["new_cases"] %></td>
                         <td data-label="TOTAL DEATHS"><%= countries[i]["deaths"] %></td>
-                        <td data-label="NEW DEATHS"><%= countries[i]["new_deaths"] %></td>
                         <td data-label="TOTAL RECOVERED"><%= countries[i]["total_recovered"] %></td>
                         <td data-label="ACTIVE CASES"><%= countries[i]["active_cases"] %></td>
                       </tr>
@@ -43,8 +45,21 @@
             border: 0.5px solid #fff
         }
         .ui.table thead th{
+            padding: 5px;
             color: #fff;
             background-color: #1b1c1d;
+        }
+        @media(max-width: 550px){
+            th, h5{
+                font-size: .6em;
+                padding: 0;
+            }
+            td{
+                font-size: .5em;
+            }
+            .ui.table td{
+                padding: 1px;
+            }
         }
     </style>
 <%- include("partials/footer"); -%>
