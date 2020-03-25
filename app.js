@@ -39,58 +39,69 @@ app.get("/stats", function(req, res){
             console.log(error)
         }else{
             newBody = JSON.parse(body)
-
             //initialise  countries then change later
-            var nigeria = "",
-                    ghana = "",
-                    benin  = "",
-                    chad = "",
-                    niger = "",
-                    gambia = "",
-                    burkina_faso = "",
-                    ivory_coast = "",
-                    mauritania = "",
-                    togo = "",
-                    liberia = "",
-                    cabo_verde = "",
-                    senegal = "",
-                    guinea  = ""
-
+            var countries = [],
+                    others = []
             for(i in newBody.countries_stat){
                 var count = newBody.countries_stat[i]
                 if (count.country_name == "Nigeria"){
                    nigeria = count
+                   countries.push(nigeria)
                 }else if(count.country_name == "Ghana"){
                     ghana = count
+                    countries.push(ghana)
                 }else if(count.country_name == "Benin"){
                     benin = count
+                    countries.push(benin)
                 }else if(count.country_name == "Chad"){
                     chad = count
+                    countries.push(chad)
                 }else if(count.country_name == "Niger"){
                     niger = count
+                    countries.push(niger)
                 }else if(count.country_name == "Gambia"){
                     gambia = count
+                    countries.push(gambia)
                 }else if(count.country_name == "Liberia"){
                     liberia = count
+                    countries.push(liberia)
                 }else if(count.country_name == "Togo"){
                     togo = count
+                    countries.push(togo)
                 }else if(count.country_name == "Senegal"){
                     senegal = count
+                    countries.push(senegal)
                 }else if(count.country_name == "Cabo Verde"){
                     cabo_verde = count
+                    countries.push(cabo_verde)
                 }else if(count.country_name == "Burkina Faso"){
                     burkina_faso = count
+                    countries.push(burkina_faso)
                 }else if(count.country_name == "Ivory Coast"){
                     ivory_coast = count
+                    countries.push(ivory_coast)
                 }else if(count.country_name == "Mauritania"){
                     mauritania = count
+                    countries.push(mauritania)
                 }else if(count.country_name == "Guinea"){
                     guinea = count
+                    countries.push(guinea)
+                }else if(count.country_name == "USA"){
+                    usa = count
+                    others.push(usa)
+                }else if(count.country_name == "UK"){
+                    uk = count
+                    others.push(uk)
+                }else if(count.country_name == "Italy"){
+                    italy = count
+                    others.push(italy)
+                }else if(count.country_name == "China"){
+                    china = count
+                    others.push(china)
                 }
             }
 
-            const countries = [nigeria, ghana, benin, chad, niger, gambia, guinea, burkina_faso, liberia, senegal, cabo_verde, togo, mauritania,ivory_coast]
-            res.render("stats", {countries: countries})
+            res.render("stats", {countries: countries, others: others})
         }
     });
 })
