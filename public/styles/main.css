@@ -12,6 +12,22 @@
 h1, h2, h3, h4,h5, h6{
     font-family: 'Heebo', sans-serif;
 }
+#header{
+    background: url("/img/covid19.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    border-radius: 0mm;
+    width: 100% !important;
+    box-shadow: none;
+    justify-content: center;
+}
+#special{
+    background: url("/img/doctor.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
 body{
     background: #fff;
     font-size: 1.5em;

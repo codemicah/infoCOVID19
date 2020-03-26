@@ -98,6 +98,12 @@ app.get("/stats", function(req, res){
                 }else if(count.country_name == "China"){
                     china = count
                     others.push(china)
+                } else if (count.country_name == "Spain") {
+                    spain = count
+                    others.push(spain)
+                } else if (count.country_name == "S. Korea") {
+                    south_korea = count
+                    others.push(south_korea)
                 }
             }
 
