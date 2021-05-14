@@ -1,66 +1,40 @@
 <%- include("partials/header"); -%>
-<div id="special" >
-    
-</div>
-<div class=" ui segment" id="diagnose">
+<div id="special">
+  <div class="ui segment" id="diagnose">
     <h1>Mind if we diagnose you?</h1>
     <form action="" class="form">
-        <div class="ui raised segments animated fadeIn">
-            <div class="ui segment">
-                <div class="ui checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <label for="">Do you have a slightly runny nose?</label>
-                </div>
-            </div>
-            <div class="ui segment">
-                <div class="ui checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <label for="">Do you have a cough?</label>
-                </div>
-            </div>
-            <div class="ui segment">
-                <div class="ui checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <label for="">Do you have a headache?</label>
-                </div>
-            </div>
-            <div class="ui segment">
-                <div class="ui checkbox">
-                    <input type="checkbox" id="checkbox">
-                    <label for="">Do you have a fever?</label>
-                </div>
-            </div>
+      <div class="ui raised segments animated fadeIn">
+        <div class="ui segment">
+          <div class="ui checkbox">
+            <input type="checkbox" id="checkbox" />
+            <label for="">Do you have a slightly runny nose?</label>
+          </div>
         </div>
+        <div class="ui segment">
+          <div class="ui checkbox">
+            <input type="checkbox" id="checkbox" />
+            <label for="">Do you have a cough?</label>
+          </div>
+        </div>
+        <div class="ui segment">
+          <div class="ui checkbox">
+            <input type="checkbox" id="checkbox" />
+            <label for="">Do you have a headache?</label>
+          </div>
+        </div>
+        <div class="ui segment">
+          <div class="ui checkbox">
+            <input type="checkbox" id="checkbox" />
+            <label for="">Do you have a fever?</label>
+          </div>
+        </div>
+      </div>
     </form>
     <div id="progress_bar">
-        <div class="bar">
-            <span class="text centered">
-                You're fine
-            </span>
-        </div>
+      <div class="bar">
+        <span class="text centered"> You're fine </span>
+      </div>
     </div>
+  </div>
 </div>
-<style>
-    #special{
-        width: 100%;
-        filter: blur(4px);
-        -webkit-filter: blur(4px);
-    }
-    #diagnose{
-        margin: 80px 0 -50px 50px ;
-        float: left;
-        background: transparent;
-        width: 50%;
-        position: fixed;
-        top: 0px;
-        left: 0;
-    }
-    @media(max-width: 550px){
-        #diagnose{
-            width: 100%; 
-            margin: 80px 0;
-            float: none;
-        }
-    }
-</style>
-    <%- include("partials/footer"); -%>
+<%- include("partials/footer"); -%>

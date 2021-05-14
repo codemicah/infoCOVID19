@@ -1,96 +1,113 @@
-*{
-    list-style: none;
-    font-family: 'Baloo Chettan 2', cursive;
-}
-* a{
-    color: #fff;
-}
-#tick{
-    transform: scale(3);
-    color: lime;
-}
-h1, h2, h3, h4,h5, h6{
-    font-family: 'Heebo', sans-serif;
-}
-#header{
-    background: url("/img/covid19.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    border: none;
-    border-radius: 0mm;
-    width: 100% !important;
-    box-shadow: none;
-    justify-content: center;
-}
-#special{
-    background: url("/img/doctor.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-}
-body{
-    background: #fff;
-    font-size: 1.5em;
-    font-family: 'Baloo Chettan 2', cursive;
-}
-h1{
-    font-size: 2em;
-}
-#progress_bar{
-    padding: 10px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
-    background-color: black;
-}
-.bar{
-    height: 30px;
-    transition: .5s;
-    background-color:#30e030;
-    color: #f1f1f1;
-    padding: 0 5px;
-    font-weight: 600;
-    font-size: .6em;
-    border-radius: 2mm;
-}
-/* ..ui.checkbox input[type=checkbox]{
-    transform: scale(5);
-} */
+@import "./animate.css";
+@import "./icon.min.css";
+@import "./semantic.min.css";
 
-.ui .segment{
-    padding: 30px;
+* {
+  list-style: none;
+  font-family: "Baloo Chettan 2", cursive;
 }
-.others{
-    display: flexbox;
-    float: right
+* a {
+  color: #fff;
 }
-#report{
-        position: fixed;
-        right: 60px;
-        bottom: 60px; 
-        background-color: red;
-        color: #fff;
-        border-radius: 50%;
-        text-align: center;
-        margin: auto;
-        padding: 30px;
+#tick {
+  transform: scale(3);
+  color: lime;
 }
-.ui.menu:not(.vertical) .item{
-    display: inline-block;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Heebo", sans-serif;
 }
-#menu_btn{
+#header {
+  background: url("/img/covid19.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: none;
+  border-radius: 0mm;
+  width: 100% !important;
+  box-shadow: none;
+  justify-content: center;
+}
+#special {
+  background: url("/img/doctor.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+#diagnose {
+  margin: 80px 0 -50px 50px;
+  background: transparent;
+  width: 55%;
+}
+body {
+  background: #fff;
+  font-size: 1.5em;
+  font-family: "Baloo Chettan 2", cursive;
+}
+h1 {
+  font-size: 2em;
+}
+#progress_bar {
+  padding: 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.8);
+  background-color: black;
+}
+.bar {
+  height: 30px;
+  transition: 0.5s;
+  background-color: #30e030;
+  color: #f1f1f1;
+  padding: 0 5px;
+  font-weight: 600;
+  border-radius: 2mm;
+}
+
+.ui .segment {
+  padding: 30px;
+}
+.others {
+  display: flexbox;
+  float: right;
+}
+#report {
+  position: fixed;
+  right: 60px;
+  bottom: 60px;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+  padding: 30px;
+}
+.ui.menu:not(.vertical) .item {
+  display: inline-block;
+}
+#menu_btn {
+  display: none;
+}
+@media (max-width: 550px) {
+  #diagnose {
+    width: 100%;
+    margin: 80px 0;
+    float: none;
+  }
+  #menu_btn {
+    display: block;
+  }
+  body {
+    font-size: 1em;
+  }
+  #hide {
     display: none;
-}
-@media(max-width: 550px){
-    #menu_btn{display: block}
-    body{
-        font-size: 1em;
-    }
-  #hide{
-        display: none;
-    }
-    #report{
-        padding: 20px
-    }
-    .bar{
-        font-size: 1em;
-    }
+  }
+  #report {
+    padding: 20px;
+  }
+  .bar {
+    font-size: 1em;
+  }
 }

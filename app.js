@@ -1,118 +1,122 @@
-const express = require("express"),
-            ejs          = require("ejs"),
-            request = require("request"),
-            bodyParser = require("body-parser")
+require("dotenv");
+const express = require("express");
+const ejs = require("ejs");
+const request = require("request");
 
-const app = express()
-app.use(express.static("public"))
-app.set("view engine", "ejs")
-app.use(bodyParser.urlencoded({ extended: true }))
+const { X_RAPIDAPI_KEY, API_URL, X_RAPIDAPI_HOST, COUNTRY } = process.env;
 
+const app = express();
+app.use(express.static("public"));
+app.set("view engine", "ejs");
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/", function(req,res){
-    res.render("home")
-})
+app.get("/", (req, res) => {
+  res.render("home");
+});
 
-app.get("/tips", function(req,res){
-    res.render("tips")
-})
-app.get("/diagnose", function(req,res){
-    res.render("diagnose");
-})
-app.get("/report", function(req,res){
-    res.render("report")
-})
+app.get("/tips", (req, res) => {
+  res.render("tips");
+});
+app.get("/diagnose", (req, res) => {
+  res.render("diagnose");
+});
+app.get("/report", (req, res) => {
+  res.render("report");
+});
 
-app.get("/stats", function(req, res){
-    var request = require("request");
-    var options = {
-    method: 'GET',
-    url: 'https://coronavirus-monitor.p.rapidapi.com/coronavirus/cases_by_country.php',
-    qs: {country: 'Nigeria'},
+app.get("/stats", (req, res) => {
+  const options = {
+    method: "GET",
+    url: API_URL,
+    qs: { country: COUNTRY },
     headers: {
-        'x-rapidapi-host': 'coronavirus-monitor.p.rapidapi.com',
-        'x-rapidapi-key': 'ce6eed163cmshe72597862eb749cp10932ejsn8209333a4ca5'
-    }
-    };
-    request(options, function (error, response, body) {
-        if (error) {
-            console.log(error)
-        }else{
-            newBody = JSON.parse(body)
-            //initialise  countries then change later
-            var countries = [],
-                    others = []
-            for(i in newBody.countries_stat){
-                var count = newBody.countries_stat[i]
-                if (count.country_name == "Nigeria"){
-                   nigeria = count
-                   countries.push(nigeria)
-                }else if(count.country_name == "Ghana"){
-                    ghana = count
-                    countries.push(ghana)
-                }else if(count.country_name == "Benin"){
-                    benin = count
-                    countries.push(benin)
-                }else if(count.country_name == "Chad"){
-                    chad = count
-                    countries.push(chad)
-                }else if(count.country_name == "Niger"){
-                    niger = count
-                    countries.push(niger)
-                }else if(count.country_name == "Gambia"){
-                    gambia = count
-                    countries.push(gambia)
-                }else if(count.country_name == "Liberia"){
-                    liberia = count
-                    countries.push(liberia)
-                }else if(count.country_name == "Togo"){
-                    togo = count
-                    countries.push(togo)
-                }else if(count.country_name == "Senegal"){
-                    senegal = count
-                    countries.push(senegal)
-                }else if(count.country_name == "Cabo Verde"){
-                    cabo_verde = count
-                    countries.push(cabo_verde)
-                }else if(count.country_name == "Burkina Faso"){
-                    burkina_faso = count
-                    countries.push(burkina_faso)
-                }else if(count.country_name == "Ivory Coast"){
-                    ivory_coast = count
-                    countries.push(ivory_coast)
-                }else if(count.country_name == "Mauritania"){
-                    mauritania = count
-                    countries.push(mauritania)
-                }else if(count.country_name == "Guinea"){
-                    guinea = count
-                    countries.push(guinea)
-                }else if(count.country_name == "USA"){
-                    usa = count
-                    others.push(usa)
-                }else if(count.country_name == "UK"){
-                    uk = count
-                    others.push(uk)
-                }else if(count.country_name == "Italy"){
-                    italy = count
-                    others.push(italy)
-                }else if(count.country_name == "China"){
-                    china = count
-                    others.push(china)
-                } else if (count.country_name == "Spain") {
-                    spain = count
-                    others.push(spain)
-                } else if (count.country_name == "S. Korea") {
-                    south_korea = count
-                    others.push(south_korea)
-                }
-            }
+      "x-rapidapi-host": X_RAPIDAPI_HOST,
+      "x-rapidapi-key": X_RAPIDAPI_KEY,
+    },
+  };
+  request(options, function (error, response, body) {
+    if (error) {
+      console.log(error);
+    } else {
+      const newBody = JSON.parse(body);
+      //initialise  countries
+      const countries = [];
+      const others = [];
+      for (i in newBody.countries_stat) {
+        const count = newBody.countries_stat[i];
 
-            res.render("stats", {countries: countries, others: others})
+        switch (count.country_name) {
+          case "Nigeria":
+            countries.push(count);
+            break;
+          case "Ghana":
+            countries.push(count);
+            break;
+          case "Benin":
+            countries.push(count);
+            break;
+          case "Chad":
+            countries.push(count);
+            break;
+          case "Niger":
+            countries.push(count);
+            break;
+          case "Gambia":
+            countries.push(count);
+            break;
+          case "Liberia":
+            countries.push(count);
+            break;
+          case "Togo":
+            countries.push(count);
+            break;
+          case "Senegal":
+            countries.push(count);
+            break;
+          case "Cabo Verde":
+            countries.push(count);
+            break;
+          case "Burkina Faso":
+            countries.push(count);
+            break;
+          case "Ivory Coast":
+            countries.push(count);
+            break;
+          case "Mauritania":
+            countries.push(count);
+            break;
+          case "Guinea":
+            countries.push(count);
+            break;
+          case "USA":
+            others.push(count);
+            break;
+          case "UK":
+            others.push(count);
+            break;
+          case "Italy":
+            others.push(count);
+            break;
+          case "China":
+            others.push(count);
+            break;
+          case "Spain":
+            others.push(count);
+            break;
+          case "S. Korea":
+            others.push(count);
+            break;
+
+          default:
+            break;
         }
-    });
-})
+      }
 
+      res.render("stats", { countries: countries, others: others });
+    }
+  });
+});
 
-app.listen(process.env.PORT || 4000, function(){
-    console.log("let's save the world >>>")
-})
+app.listen(process.env.PORT || 4000, function () {
+  console.log("let's save the world >>>");
+});
